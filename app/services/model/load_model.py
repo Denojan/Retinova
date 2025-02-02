@@ -150,21 +150,21 @@ def se_block(input_tensor, reduction=16):
         return layers.Multiply()([input_tensor, se])
 
 # Lambda function for deserialization
-def custom_lambda_function(x):
-    return tf.expand_dims(x, axis=1)
+# def custom_lambda_function(x):
+#     return tf.expand_dims(x, axis=1)
 
-# Load AMD model function
-def get_amd_model():
-    try:
-        custom_objects = {
-            'GraphConstruction': GraphConstruction,
-            'GraphConvolution': GraphConvolution,
-            'se_block': se_block,
-            'Lambda': custom_lambda_function,  # Custom Lambda function for deserialization
-        }
-        model = load_model(AMD_MODEL_PATH, custom_objects=custom_objects, safe_mode=False)
-        print("AMD Model loaded successfully!")
-        return model
-    except Exception as e:
-        print(f"Error loading model: {e}")
-        return None
+# # Load AMD model function
+# def get_amd_model():
+#     try:
+#         custom_objects = {
+#             'GraphConstruction': GraphConstruction,
+#             'GraphConvolution': GraphConvolution,
+#             'se_block': se_block,
+#             'Lambda': custom_lambda_function,  # Custom Lambda function for deserialization
+#         }
+#         model = load_model(AMD_MODEL_PATH, custom_objects=custom_objects, safe_mode=False)
+#         print("AMD Model loaded successfully!")
+#         return model
+#     except Exception as e:
+#         print(f"Error loading model: {e}")
+#         return None
