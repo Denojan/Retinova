@@ -11,7 +11,7 @@ import keras
 keras.config.enable_unsafe_deserialization()
 
 GDRIVE_MODEL_ID = "16K2gHx-WsX7PjnxIMCgiioWJKrIgxWJo"
-MODEL_PATH = "model97,96,0.4,0.2,50.keras"
+MODEL_PATH = "/home/ubuntu/Retinova/models/model97,96,0.4,0.2,50.keras"
 
 def download_model():
     if not os.path.exists(MODEL_PATH):
